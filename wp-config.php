@@ -19,7 +19,7 @@
  * @package WordPress
  */
 /** Using environment variables for DB connection information */
-$connectstr_dbhost = 'mysqldb-hen-wp-prd-eastus.mysql.database.azure.com';
+$connectstr_dbhost = 'mysqldb-hen-wp-tst-eastus.mysql.database.azure.com';
 $connectstr_dbname = 'henutsendb';
 $connectstr_dbusername = 'henutsen';
 $connectstr_dbpassword = 'H3nu7s3n*';
