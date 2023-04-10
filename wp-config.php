@@ -18,39 +18,29 @@
  *
  * @package WordPress
  */
-
 /** Using environment variables for DB connection information */
 $connectstr_dbhost = 'mysqldb-hen-wp-prd-eastus.mysql.database.azure.com';
 $connectstr_dbname = 'henutsendb';
 $connectstr_dbusername = 'henutsen';
 $connectstr_dbpassword = 'H3nu7s3n*';
-
-
 // ** Database settings - You can get this info from your web host ** //
 /** The name of the database for WordPress */
 define('DB_NAME', $connectstr_dbname);
-
 /** Database username */
 define('DB_USER', $connectstr_dbusername);
-
 /** Database password */
 define('DB_PASSWORD', $connectstr_dbpassword);
-
 /** Database hostname */
 define('DB_HOST', $connectstr_dbhost);
-
 /** Database charset to use in creating database tables. */
 define( 'DB_CHARSET', 'utf8' );
-
 /** The database collate type. Don't change this if in doubt. */
 define( 'DB_COLLATE', '' );
-
 /** Enabling support for connecting external MYSQL over SSL */
 $mysql_sslconnect = (getenv('DB_SSL_CONNECTION')) ? getenv('DB_SSL_CONNECTION') : 'true';
 if (strtolower($mysql_sslconnect) != 'false' && !is_numeric(strpos($connectstr_dbhost, "127.0.0.1")) && !is_numeric(strpos(strtolower($connectstr_dbhost), "localhost"))) {
 	define('MYSQL_CLIENT_FLAGS', MYSQLI_CLIENT_SSL);
 }
-
 /**#@+
  * Authentication unique keys and salts.
  *
@@ -70,7 +60,6 @@ define( 'AUTH_SALT',        'put your unique phrase here' );
 define( 'SECURE_AUTH_SALT', 'put your unique phrase here' );
 define( 'LOGGED_IN_SALT',   'put your unique phrase here' );
 define( 'NONCE_SALT',       'put your unique phrase here' );
-
 /**
  * Security for Wordpress : 
  * you may wish to disable the plugin or theme editor to prevent overzealous users from being able to edit sensitive files and 
@@ -78,9 +67,7 @@ define( 'NONCE_SALT',       'put your unique phrase here' );
  * well-privileged user account.
  * Note : If your plugin or theme you use with your app requires editing of the files , comment the line below for 'DISALLOW_FILE_EDIT'
  */
-
 /**#@-*/
-
 /**
  * WordPress database table prefix.
  *
@@ -88,7 +75,6 @@ define( 'NONCE_SALT',       'put your unique phrase here' );
  * a unique prefix. Only numbers, letters, and underscores please!
  */
 $table_prefix = 'wp_';
-
 /**
  * For developers: WordPress debugging mode.
  *
@@ -102,20 +88,14 @@ $table_prefix = 'wp_';
  * @link https://wordpress.org/support/article/debugging-in-wordpress/
  */
 define( 'WP_DEBUG', false );
-
 /* Add any custom values between this line and the "stop editing" line. */
-
 /** Relative URLs for swapping across App Service deployment slots */
 define('WP_HOME', 'http://'. filter_input(INPUT_SERVER, 'HTTP_HOST', FILTER_SANITIZE_STRING));
 define('WP_SITEURL', 'http://'. filter_input(INPUT_SERVER, 'HTTP_HOST', FILTER_SANITIZE_STRING));
-
-
 /* That's all, stop editing! Happy publishing. */
-
 /** Absolute path to the WordPress directory. */
 if ( ! defined( 'ABSPATH' ) ) {
 	define( 'ABSPATH', __DIR__ . '/' );
 }
-
 /** Sets up WordPress vars and included files. */
 require_once ABSPATH . 'wp-settings.php';
