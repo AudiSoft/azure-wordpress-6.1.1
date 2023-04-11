@@ -1,0 +1,7 @@
+{
+  "serviceURLScim": "http://192.168.0.6:7071/",
+  "serviceURL": "http://192.168.0.6:7072/api/",
+  "sendGridURL": "http://192.168.0.6:7073/api/",
+  "apiManagementURL": "http://192.168.0.6:7074/api/",
+  "serviceURLSubscription": "http://192.168.0.6:7075/api/"
+}
